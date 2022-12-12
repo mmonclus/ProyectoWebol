@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <table style="background-color: rgb(162, 210, 238);border-radius: 10px; color:rgb(24, 7, 119) ">
+        <tr>
+            <td> Hola {{nombreusuario}}</td>
+            <td> Tu Nº de pedido es: {{pedido.id}}<br/></td>
+        </tr>
+    </table>
+    
+  
+    <table style="background-color: rgb(36, 89, 204);border-radius: 10px; color:rgb(247, 245, 238) ">
+        <tr>
+            <td></td>
+            <td>Artuculo</td>
+            <td>cantidad</td>
+            <td>precio por unidad</td>
+            <td></td>
+        </tr>
+        {% for lineas_pedido in lineas_pedido %}
+        <tr class="text-center">  
+           <td> <img src="{{lineas_pedido.producto.imagen_email}}" alt="" width="50px" height="75px" style="border-radius: 10px;"></td> 
+           <td>{{lineas_pedido.producto}}</td>
+           <td align="center">{{lineas_pedido.cantidad}}</td> 
+           <td align="center">{{lineas_pedido.producto.precio}}</td>
+        </tr>           
+        {% endfor %}
+        
+</table>
+<p style="color: blue ;"> Total: {{importe_total_carro}} $ </p>
+</body>
+</html>
